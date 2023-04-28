@@ -52,6 +52,6 @@ Se utilizan Docker y Docker Compose para construir, empaquetar y ejecutar los mi
 1. Asegúrate de tener instalado Docker y Docker Compose en tu máquina.
 2. Ejecuta `docker-compose up --build` en la raíz del proyecto para construir y ejecutar los contenedores.
 
-El FrontEnd se encontrara en http://localhost:3000
+El FrontEnd se encontrara en http://localhost:80
 El servidor de Nest estará disponible en la dirección http://localhost:3001
 La ruta para obtener los datos de conversión de divisas es http://localhost:3000/scraper/conversions/euro-to-dollar

@@ -16,9 +16,10 @@ services:
       - app-network
 
   frontend:
-    build: ./react-frontend
+    build: 
+      context: ./react-frontend
     ports:
-      - "3000:3000"
+      - "80:80"
     volumes:
       - ./frontend:/app
       - /app/node_modules
