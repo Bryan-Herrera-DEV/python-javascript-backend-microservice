@@ -18,14 +18,18 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "compile-proto": "grpc_tools_node_protoc --proto_path=src/scraper/infrastructure/gRPC --js_out=import_style=commonjs,binary:src/scraper/infrastructure/gRPC --grpc_out=src/scraper/infrastructure/gRPC --plugin=protoc-gen-grpc=node_modules/.bin/grpc_tools_node_protoc_plugin src/scraper/infrastructure/gRPC/scraper.proto"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.8.14",
+    "@grpc/proto-loader": "^0.7.6",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/cqrs": "^9.0.3",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^9.0.1",
+    "grpc-tools": "^1.12.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",

@@ -1,0 +1,46 @@
+# Archivos de bytecode de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py.class
+
+# Entorno virtual
+venv/
+env/
+ENV/
+
+# Archivos de instalación
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+*.tar.gz
+
+# Archivos generados por gRPC
+*_pb2.py
+*_pb2_grpc.py
+
+# Archivos generados por Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Archivos generados por PyCharm
+.idea/
+
+# Archivos generados por VSCode
+.vscode/
+
+# Archivos de log
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db

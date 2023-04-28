@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package scraper;
+
+// Servicio de scraper
+service Scraper {
+  rpc Scrape(ScrapeRequest) returns (ScrapeResponse);
+}
+
+// Mensaje de solicitud para el método Scrape
+message ScrapeRequest {
+  string url = 1;
+}
+
+// Mensaje de respuesta para el método Scrape
+message ScrapeResponse {
+  string data = 1;
+}

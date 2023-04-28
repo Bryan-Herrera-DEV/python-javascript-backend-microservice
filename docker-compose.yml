@@ -5,3 +5,16 @@ services:
       context: ./nest-backend
     ports:
       - "3000:3000"
+    networks:
+      - app-network
+  scraper:
+    build:
+      context: ./python-microservice
+    ports:
+      - "50051:50051"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
