@@ -18,6 +18,8 @@ services:
   frontend:
     build: 
       context: ./react-frontend
+      args:
+        - VITE_BACKENDURL=http://backend:3001
     ports:
       - "80:80"
     volumes:
@@ -26,6 +28,10 @@ services:
     depends_on:
       - backend
       - scraper
+    networks:
+      - app-network
+    environment:
+      - VITE_BACKENDURL=http://backend:3001
 
 networks:
   app-network:
