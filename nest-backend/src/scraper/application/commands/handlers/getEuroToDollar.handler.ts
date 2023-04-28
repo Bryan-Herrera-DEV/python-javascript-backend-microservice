@@ -1,4 +1,4 @@
-import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
+import { CommandHandler } from '@nestjs/cqrs';
 import { GetEuroToDollarCommand } from '../getEuroToDollar.command';
 import { ScraperAppService } from '../../service/scraper-app.service';
 
