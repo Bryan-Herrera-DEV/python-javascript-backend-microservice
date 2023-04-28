@@ -13,8 +13,23 @@ export class DataDayRepository {
   }
 
   async findAll(): Promise<DataDay[]> {
-    return await this.dataDayRepository.find(
-        { order: { date: 'DESC' } },
-    );
+    return await this.dataDayRepository.find();
+  }
+
+  async findFirstElement(): Promise<DataDay> {
+    const dataDay = await this.dataDayRepository.find({ order: { id: 'ASC' } });
+
+    if (!dataDay) {
+      return {
+        id: 0,
+        date: 'No hay datos',
+        high: '',
+        low: '',
+        open: '',
+        close: '',
+      }
+    }
+
+    return dataDay[0];
   }
 }

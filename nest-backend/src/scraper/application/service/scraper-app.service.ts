@@ -15,6 +15,12 @@ export class ScraperAppService {
 
         const data: IDataDay[] = JSON.parse(response.data);
 
+        const firstSaved = await this.dataDayRepository.findFirstElement();
+        if(firstSaved && firstSaved.date === data[0].Date) {
+          resolve(data);
+          return;
+        }
+
         const dataDayToSave = data.map((dataDay) => {
           const newDataDay = new DataDay();
           newDataDay.date = dataDay.Date;
