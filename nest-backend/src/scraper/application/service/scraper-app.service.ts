@@ -1,17 +1,26 @@
 import { Injectable } from '@nestjs/common';
 import { DataDayRepository } from 'src/scraper/domain/data-day/data-day.repository';
 import ScraperClient from '../../infraestructure/gRPC/scraper.client';
+import { IDataDay } from 'src/scraper/domain/data-day/data-dat.interface';
 @Injectable()
 export class ScraperAppService {
   constructor(private dataDayRepository: DataDayRepository) {}
 
   async getEuroToDollar() {
-    return new Promise((resolve, reject) => {
+    const data = new Promise((resolve, reject) => {
       ScraperClient.Scrape({ url: "a" }, (error, response) => {
         if (error) reject(error);
-        console.log(response)
-        resolve(response);
+        // respinse.data to json
+
+        const data: IDataDay[] = JSON.parse(response.data);
+        console.log(data);
+
+        resolve(data);
       });
     });
+
+    console.log(data)
+
+    return data;
   }
 }

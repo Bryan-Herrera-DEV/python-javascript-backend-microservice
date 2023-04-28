@@ -6,11 +6,17 @@ export class DataDay {
   id: number;
 
   @Column()
-  day: string;
+  date: string;
 
   @Column()
-  month: string;
+  high: string;
 
   @Column()
-  euroToDollar: number;
+  low: string;
+
+  @Column()
+  open: string;
+
+  @Column()
+  close: string;
 }
