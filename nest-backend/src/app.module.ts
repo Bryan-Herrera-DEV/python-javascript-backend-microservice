@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { ScraperController } from './scraper/scraper.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataDay } from './scraper/domain/data-day/data-day.entity';
+import { ScraperService } from './scraper/scraper.service';
+import { ScraperAppService } from './scraper/application/service/scraper-app.service';
 
 @Module({
   imports: [
@@ -16,6 +18,6 @@ import { DataDay } from './scraper/domain/data-day/data-day.entity';
     TypeOrmModule.forFeature([DataDay]),
   ],
   controllers: [AppController, ScraperController],
-  providers: [AppService],
+  providers: [AppService, ScraperService, ScraperAppService],
 })
 export class AppModule {}
