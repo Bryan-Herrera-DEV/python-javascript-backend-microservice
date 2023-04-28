@@ -4,6 +4,7 @@ import ScraperClient from '../../infraestructure/gRPC/scraper.client';
 import { IDataDay } from 'src/scraper/domain/data-day/data-dat.interface';
 import { DataDay } from 'src/scraper/domain/data-day/data-day.entity';
 import { makeResponse } from 'src/common/responses/makeResponses';
+import sendWebhook from 'src/scraper/infraestructure/site-webhook/sendWebhook';
 @Injectable()
 export class ScraperAppService {
   constructor(private dataDayRepository: DataDayRepository) {}
@@ -33,6 +34,8 @@ export class ScraperAppService {
         });
 
         await this.dataDayRepository.save(dataDayToSave);
+
+        await sendWebhook(dataDayToSave);
         resolve(data);
       });
     });

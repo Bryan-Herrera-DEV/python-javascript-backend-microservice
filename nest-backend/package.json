@@ -29,6 +29,7 @@
     "@nestjs/cqrs": "^9.0.3",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^9.0.1",
+    "axios": "^1.4.0",
     "grpc-tools": "^1.12.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
