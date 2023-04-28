@@ -4,7 +4,7 @@ services:
     build:
       context: ./nest-backend
     ports:
-      - "3000:3000"
+      - "3001:3001"
     networks:
       - app-network
   scraper:
@@ -14,6 +14,17 @@ services:
       - "50051:50051"
     networks:
       - app-network
+
+  frontend:
+    build: ./react-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+      - scraper
 
 networks:
   app-network:

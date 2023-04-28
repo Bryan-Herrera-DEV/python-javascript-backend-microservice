@@ -1,5 +1,6 @@
 # ProximaSolves Test
 Este proyecto consiste en un servicio de scrapping en Python que obtiene datos de conversión de divisas y una API en NestJS que consume los datos del scraper y los almacena en una base de datos SQLite.
+Estos datos se muestran a travez del frontend en React.
 
 ## Estructura de carpetas
 ```js
@@ -7,6 +8,12 @@ Este proyecto consiste en un servicio de scrapping en Python que obtiene datos d
 │ ├── src
 │ │ ├── app.module.ts
 │ │ ├── main.ts
+│ ├── Dockerfile
+│ └── ...
+├── react-frontend
+│ ├── src
+│ │ ├── App.tsx
+│ │ ├── main.tsx
 │ ├── Dockerfile
 │ └── ...
 ├── python-microservice
@@ -45,6 +52,6 @@ Se utilizan Docker y Docker Compose para construir, empaquetar y ejecutar los mi
 1. Asegúrate de tener instalado Docker y Docker Compose en tu máquina.
 2. Ejecuta `docker-compose up --build` en la raíz del proyecto para construir y ejecutar los contenedores.
 
-
-El servidor de Nest estará disponible en la dirección http://localhost:3000
+El FrontEnd se encontrara en http://localhost:3000
+El servidor de Nest estará disponible en la dirección http://localhost:3001
 La ruta para obtener los datos de conversión de divisas es http://localhost:3000/scraper/conversions/euro-to-dollar
