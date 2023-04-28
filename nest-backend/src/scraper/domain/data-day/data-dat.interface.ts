@@ -1,9 +1,9 @@
 
 export interface IDataDay {
     id: number;
-    date: string;
-    high: string;
-    low: string;
-    open: string;
-    close: string;
+    Date: string;
+    High: string;
+    Low: string;
+    Open: string;
+    Close: string;
   }
